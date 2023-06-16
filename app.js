@@ -5,7 +5,7 @@ const Todo = require('./models/Todo');
 const app = express();
 require("dotenv").config();
 
-const db = process.env.db;
+const db = 'mongodb+srv://Priyanshu:Winomeo@mern-todo.ur19suk.mongodb.net/mern-todo?retryWrites=true&w=majority';
 
 const port = process.env.PORT || 5000;
 
