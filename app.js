@@ -22,8 +22,8 @@ mongoose.connect(db, {
 
 
 app.get('/todos', async (req, res) => {
-    const todos = await Todo.find();
-    res.status(200).json(todos);
+    // const todos = await Todo.find();
+    res.status(200).json("todos");
 })
 
 app.get('/', async (req, res) => {
