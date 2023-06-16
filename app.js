@@ -23,11 +23,11 @@ mongoose.connect(db, {
 
 app.get('/todos', async (req, res) => {
     const todos = await Todo.find();
-    res.json(todos);
+    res.status(200).json(todos);
 })
 
 app.get('/', async (req, res) => {
-    res.json("hey!");
+    res.status(200).json("hey!");
 })
 
 app.post('/todo/new', (req, res) => {
@@ -37,13 +37,13 @@ app.post('/todo/new', (req, res) => {
 
     todo.save();
 
-    res.json(todo);
+    res.status(200).json(todo);
 })
 
 app.delete('/todo/delete/:id', async (req, res) => {
     const result = await Todo.findByIdAndDelete(req.params.id);
 
-    res.json(result);
+    res.status(200).json(result);
 })
 
 app.get('/todo/complete/:id', async (req, res) => {
@@ -53,7 +53,7 @@ app.get('/todo/complete/:id', async (req, res) => {
 
     todo.save();
 
-    res.json(todo);
+    res.status(200).json(todo);
 })
 
 
